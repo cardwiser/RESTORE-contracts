@@ -1,0 +1,11 @@
+var RestoreToken = artifacts.require("./contracts/RestoreToken.sol");
+var RestoreTokenPresale = artifacts.require("./contracts/RestoreTokenPresale.sol");
+var config = require("../truffle");
+
+module.exports = function(deployer) {
+	deployer.deploy(RestoreToken, 1000000000000000).then(function(contract) {
+		console.log("RestoreToken contract", contract);
+	}, function(err) {
+		console.log("Error:", err);
+	});
+};
